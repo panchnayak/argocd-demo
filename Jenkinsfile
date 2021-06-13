@@ -32,7 +32,7 @@ spec:
 
     stage('Build') {
       environment {
-        DOCKERHUB_CREDS = credentials('dockerhub')
+        DOCKERHUB_CREDS = credentials('dockerhub-user')
       }
       steps {
         container('docker') {
@@ -46,7 +46,7 @@ spec:
 
     stage('Deploy E2E') {
       environment {
-        GIT_CREDS = credentials('git')
+        GIT_CREDS = credentials('panchnayak-git')
       }
       steps {
         container('tools') {
